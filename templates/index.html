@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danial</title>
+    <link 
+        rel="stylesheet" 
+        href="
+            {{ 
+                url_for('static',
+                filename='css/style.css') 
+            }}
+        "
+    >
+</head>
+<body>
+    <main>
+        {% for item in hrth %}
+        <a href="/{{ hrth.index(item) }}">
+            <div class="card"
+            style="background-image: url({{ url_for('static', filename='images/card_background.jpg') }});">
+
+                <h1>{{ item.name }}</h1>
+                <br>
+                <span>{{ item.text }}</span>
+                <h3>{{ item.type }}</h3>
+            </div>
+        </a>
+        {% endfor %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danial's card</title>
+    <link 
+        rel="stylesheet" 
+        href="
+            {{ 
+                url_for('static',
+                filename='css/style.css') 
+            }}
+        "
+    >
+</head>
+<body>
+    <main>
+        <div 
+            class="card"
+            style="background-image: url({{ url_for('static', filename='images/card_background.jpg') }});"
+            >
+            <h1>{{card.name }}</h1>
+            <br>
+            <span>{{ card.text }}</span>
+            <h3>{{ card.type }}</h3>
+        </div>
+    </main>
+</body>
+</html>
